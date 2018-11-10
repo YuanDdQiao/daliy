@@ -1,0 +1,153 @@
+html,body{ 
+	width:100%;
+  height:100%;
+  /* 页面文字不可选中 */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+
+.count-particles{
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
+
+
+#particles-js{
+	width: 100%;
+	height: 100%;
+	position: relative;
+  /* background-image: url(../img/bg.jpg); */
+  background-color: #4bcece;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.syncer{flex-shrink: 0;z-index: 2;position:fixed;background-color: #F6F6F6;width: 1300px;border-radius: 20px;height: 650px;box-shadow: 0px 0px 5px #333333;top: 45%;left: 25%;margin-top: -250px;margin-left: -175px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
+.syncer-title{height: 50px;position: absolute;width: 70%;top: 40px;left: 10%;}
+.syncer-windows{display: flex;}
+#connection-window-left{display: block;flex-shrink: 0;z-index: 2;position: absolute;width: 500px;border-radius: 1px;height: 500px;background: #F6F6F6;box-shadow: 0px 0px 5px #333333;top: 46%;left: 15%;margin-top: -200px;margin-left: -120px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
+#connection-window-right{display: block;flex-shrink: 0;z-index: 2;position:absolute;width: 500px;border-radius: 1px;height: 500px;background: #F6F6F6;box-shadow: 0px 0px 5px #333333;top: 46%;right: 15%;margin-top: -200px;margin-right: -120px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
+.connection-group-switch-left button:hover{background-color: #4bcece;}
+.connection-group-switch-right button:hover{background-color: #4bcece;}
+#title-options-left div:hover{background-color: #4bcece;}
+#title-options-right div:hover{background-color: #4bcece;}
+
+
+.connection-settings-left {width: 500px;margin: 0px auto;margin-top: 30px;}
+.connection-settings-left h1 {text-align: center;text-shadow: 0px 1px 0px #fff;margin-bottom: 10px;color: #999;font-size: 30px;font-weight: bold;font-family:"Times New Roman",Georgia,Serif;display: flex;margin-left: 40px;}
+.connection-settings-left h1 .logo{background-image: url(../img/logo.jpg);height: 50px;width: 50px;border-radius: 50%;background-size: cover;background-repeat: no-repeat;}
+.connection-settings-left h1 .name{margin-left: 10px;margin-top: 10px;}
+.connection-settings-left .connection-save-left{margin-top: 10px;height: 30px;margin-bottom: 10px;}
+.connection-settings-left .connection-save-left .connection-save-name-left{display: flex;}
+.connection-settings-left .connection-save-left .connection-save-name-left .connection-save-title-name-left{padding-top: 4px;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);  border-style:solid;border-width:1px;}
+.connection-settings-left .connection-save-left .connection-save-name-left .connection-save-title-lis-left{width: 250px;border-style:solid;border-width:0.1px;cursor: pointer;display: flex;}
+.connection-settings-left .connection-save-left .connection-save-name-left .connection-save-title-lis-left select{width: 250px;height: 30px;cursor: pointer;}
+.connection-settings-left .connection-options-left div{height: 20px;margin: 2px 30px 2px 30px ;cursor: pointer;background-color: #F6F6F6;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);;  border-style:solid;border-width:1px;}
+.connection-settings-left .connection-save-left .connection-save-name-left div{height: 30px;margin: 2px 40px 2px 40px ;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);}
+.connection-settings-left form {background: #F6F6F6;padding: 25px;border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;}
+.connection-settings-left form p.help-block {font-size: 12px;}
+.connection-settings-left form .no-left-padding {padding-left: 0;}
+.connection-scheme-group-left {display: none;}
+.connection-ssh-group-left {display: none;z-index: 2;}
+#close_connection_window-left {display: none;}
+#mysql-left{display: block;}
+#hbase-left{display: none;}
+#mongodb-left{display: none;}
+#postgresql-left{display: none;}
+#oracle-left{display: none;}
+#mmsql-left{display: none;}
+#connection_error-left {display: none;}
+
+.connection-settings-right {width: 500px;margin: 0px auto;margin-top: 30px;}
+.connection-settings-right h1 {text-align: center;text-shadow: 0px 1px 0px #fff;margin-bottom: 10px;color: #999;font-size: 30px;font-weight: bold;font-family:"Times New Roman",Georgia,Serif;display: flex;margin-left: 40px;}
+.connection-settings-right h1 .logo{background-image: url(../img/logo.jpg);height: 50px;width: 50px;border-radius: 50%;background-size: cover;background-repeat: no-repeat;}
+.connection-settings-right h1 .name{margin-left: 10px;margin-top: 10px;}
+.connection-settings-right .connection-save-right{margin-top: 10px;height: 30px;margin-bottom: 10px;}
+.connection-settings-right .connection-save-right .connection-save-name-right{display: flex;}
+.connection-settings-right .connection-save-right .connection-save-name-right .connection-save-title-name-right{padding-top: 4px;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);  border-style:solid;border-width:1px;}
+.connection-settings-right .connection-save-right .connection-save-name-right .connection-save-title-lis-right{width: 250px;border-style:solid;border-width:0.1px;cursor: pointer;display: flex;}
+.connection-settings-right .connection-save-right .connection-save-name-right .connection-save-title-lis-right select{width: 250px;height: 30px;cursor: pointer;}
+.connection-settings-right .connection-options-right div{height: 20px;margin: 2px 30px 2px 30px ;cursor: pointer;background-color: #F6F6F6;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);;  border-style:solid;border-width:1px;}
+.connection-settings-right .connection-save-right .connection-save-name-right div{height: 30px;margin: 2px 40px 2px 40px ;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);}
+.connection-settings-right form {background: #F6F6F6;padding: 25px;border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;}
+.connection-settings-right form p.help-block {font-size: 12px;}
+.connection-settings-right form .no-left-padding {padding-left: 0;}
+.connection-scheme-group-right {display: none;}
+.connection-ssh-group-right {display: none;z-index: 2;}
+#close_connection_window-right {display: none;}
+#mysql-right{display: block;}
+#hbase-right{display: none;}
+#mongodb-right{display: none;}
+#postgresql-right{display: none;}
+#oracle-right{display: none;}
+#mmsql-right{display: none;}
+#connection_error-right {display: none;}
+
+#connection-window-middle{position: absolute;top: 40%;left: 47.5%;width: 67px;height: 200px;font-size: 1em;font-weight: bold;}
+#connection-window-middle div{cursor: pointer;display: block;height: 65px;align-content: center;padding: 10px;padding-top: 21px;text-align: center;box-shadow: 0px 0px 5px #333333;border-radius: 4px;}
+#connection-window-middle div:hover{background-color: #4bcece;}
+
+#connection-window-middle-2{position: absolute;top: 40%;left: 80.5%;width: 67px;height: 200px;font-size: 1em;font-weight: bold;}
+#connection-window-middle-2 div{cursor: pointer;display: block;height: 65px;align-content: center;padding: 10px;padding-top: 21px;text-align: center;box-shadow: 0px 0px 5px #333333;border-radius: 4px;}
+#connection-window-middle-2 div:hover{background-color: #4bcece;}
+#connection-window-middle-2{display: none;}
+.syncer-type{display: none;position: absolute;top: 10%;left: 15%;width: 800px;height: 550px;}
+.syncer-type-title{font-weight: bold;font-size: 1.5em;}
+.syncer-type-list{position: absolute;top:100px;}
+.syncer-type-list form{height: 400px;margin: 0;}
+.syncer-type-list form .radio-list{display: block;padding: 12px 16px;margin-top: 20px;text-decoration: none;background-color: #f9f9f9;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);height: 120px;}
+
+.syncer-type-list form .radio-list div{margin-left: 14px;margin-top: 10px;}
+.syncer-type-list form .radio-list div input{margin-bottom: 10px;}
+
+#connection-window-middle-3{position: absolute;top: 40%;left: 80.5%;width: 67px;height: 200px;font-size: 1em;font-weight: bold;}
+#connection-window-middle-3 div{cursor: pointer;display: block;height: 65px;align-content: center;padding: 10px;padding-top: 21px;text-align: center;box-shadow: 0px 0px 5px #333333;border-radius: 4px;}
+#connection-window-middle-3 div:hover{background-color: #4bcece;}
+#connection-window-middle-3{display: none;}
+.syncer-list-all {display: none;position: absolute;top: 10%;left: 15%;width: 800px;height: 550px;}
+.syncer-list-single{display: none;}
+.syncer-list-dbs{display: none;}
+.syncer-list-title .syncer-list-title-name{font-weight: bold;font-size: 1.5em;}

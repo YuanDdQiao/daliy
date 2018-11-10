@@ -18,7 +18,7 @@ type Options struct {
 	Pass                         string `long:"pass" description:"Password for user"`
 	DbName                       string `long:"db" description:"Database name"`
 	Ssl                          string `long:"ssl" description:"SSL option"`
-	HttpHost                     string `long:"bind" description:"HTTP server host" default:"192.168.1.11"`
+	HttpHost                     string `long:"bind" description:"HTTP server host"`
 	HttpPort                     uint   `long:"listen" description:"HTTP server listen port" default:"80"`
 	AuthUser                     string `long:"auth-user" description:"HTTP basic auth user"`
 	AuthPass                     string `long:"auth-pass" description:"HTTP basic auth password"`
