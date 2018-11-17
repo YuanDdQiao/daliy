@@ -18,6 +18,15 @@ document.querySelector(".connection-mysql").onclick = function(){
     // alert("您将访问MySQL！")
     swdbname="MySQL"
 }
+$("#close_connection_window").on("click",function(){
+    if (swdbname !== null ) {
+        document.querySelector("#connection-default").style.display = "block"
+    } else {
+        document.querySelector("#connection-default").style.display = "none"
+    }
+    document.querySelector("#connection-window").style.display = "none"
+    document.querySelector("#mysql").style.display = "none"
+});
 $("#connection_form").on("submit", function(e) {
     e.preventDefault();
     var button = $(this).find("button.open-connection");

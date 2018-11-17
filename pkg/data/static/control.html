@@ -12,11 +12,16 @@
 <body>
 <div id="particles-js">	
     <div id="kontrol">
-        <div class="kontrol-tools-list">
-            <div>
-                <div><a href="#" class="sync">数据同步</a></div>
-                <div><a href="#" class="back">数据备份</a></div>
-                <div><a href="#" class="sync">数据恢复</a></div>
+        <div class="kontrol-tools-lists">
+            <div class="kontrol-tools-list">
+                <div class="kontrol-tools-bar">
+                    <!-- <div class="kontrol-all" style="cursor:default;"><a href="#" style="cursor:default;">高级工具</a></div> -->
+                    <div class="sync"><a href="#">数据同步</a></div>
+                    <div class="back"><a href="#">数据备份</a></div>
+                    <div class="recover"><a href="#">数据恢复</a></div>
+                    <div class="loader"><a href="#">实例负载</a></div>
+                    <div class="auther"><a href="#">权限管理</a></div>
+                </div>
             </div>
         </div>
         <div class="kontrol-tools-context"></div>
@@ -28,8 +33,5 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script src="js/app.js"></script>
 <script src="js/control.js"></script>
-<div style="text-align:center;">
-<p style="margin:0;">更多互动信息：<a href="http://www.dbace.com/" target="_blank" style="font-weight: bold;">朋友圈</a></p>
-</div>
 </body>
 </html>

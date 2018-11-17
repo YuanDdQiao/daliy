@@ -64,48 +64,15 @@ canvas{
 	margin-left: auto;
 	margin-right: auto;
 }
-.sk-rotating-plane {
-	display: none;
-    width: 80px;
-    height: 80px;
-    margin: auto;
-    background-color: white;
-    -webkit-animation: sk-rotating-plane 1.2s infinite ease-in-out;
-    animation: sk-rotating-plane 1.2s infinite ease-in-out;
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -40px;
-    margin-top: -80px;
-}
-.sk-rotating-plane.active{display: block;}
-
-@keyframes sk-rotating-plane{
-	0% {
-	    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-	    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-	}
-	50% {
-	    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-	    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-	}
-	100% {
-	    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-	    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-	}
-}
-
-@keyframes login-small{
-	0%{
-		transform: scale(1);-moz-transform: scale(1);	/* Firefox 4 */-webkit-transform: scale(1);	/* Safari 和 Chrome */-o-transform: scale(1);	/* Opera */-ms-transform:scale(1); 	/* IE 9 */
-	}
-	100%{
-		transform: scale(0.2);-moz-transform: scale(0.1);	/* Firefox 4 */-webkit-transform: scale(0.2);	/* Safari 和 Chrome */-o-transform: scale(0.1);	/* Opera */-ms-transform:scale(0.1); 	/* IE 9 */
-	}
-}
-
 #kontrol{
   display: flex;
   position: fixed;
+  height: 100%;
+  width: 100%;
 }
+.kontrol-tools-lists{background-color: #333333;}
+.kontrol-tools-list {width: 100px;margin-top: 200px;flex-shrink: 0;}
+.kontrol-tools-list .kontrol-tools-bar div{position: relative;height: 60px;background: white;box-shadow: 0px 0px 5px #333333;cursor: pointer;}
+.kontrol-tools-list .kontrol-tools-bar div a{top:50%;left:48%;position:absolute;-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);transform:translate(-50%,-50%);}
+.kontrol-tools-list .kontrol-tools-bar div:hover{background-color: #4bcece;}
+.kontrol-tools-context{position: relative;height: 100%;width: 100%;overflow-y: scroll;overflow-x: hidden;padding: 20px 20px 10px;white-space:normal; word-break:break-all;}
