@@ -20,12 +20,12 @@
 		<div class="connection-switchdb">
 			<div class="switch-control">GetDataBase</div>
 			<div class="connection-select">
-				<div class="connection-mysql">MySQL</div>
-				<div class="connection-mongodb">MongoDB</div>
-				<div class="connection-hbase">HBase</div>
-				<div class="connection-postgresql">PostGresql</div>
-				<div class="connection-oracle">Oracle</div>
-				<div class="connection-mmsql">MMSQL</div>	
+				<div class="connection-mysql" name="mysql">MySQL</div>
+				<div class="connection-mongodb" name="mongodb">MongoDB</div>
+				<div class="connection-hbase" name="hbase">HBase</div>
+				<div class="connection-postgresql" name="postgresql">PostGresql</div>
+				<div class="connection-oracle" name="oracle">Oracle</div>
+				<div class="connection-mmsql" name="mmsql">MMSQL</div>	
 			</div>
 		</div>
 		<div class="connection-switchos">
@@ -46,10 +46,10 @@
 	<div id="connection-default">
 	</div>
 	<div id="connection-window">
-		<div class="connection-settings" id="mysql">
-			<h1>
+		<div class="connection-settings" id="databases">
+			<h1 id="dbconnecttitle">
 				<div class="logo"></div>
-				<div class="name">mysql</div>
+				<div id="name">aaa</div>
 			</h1>
 			<div class="connection-options" id="title-options" style="display: flex;">
 					<!-- 鼠标点击这里时显示 选择保存过的数据库 URL -->
@@ -176,21 +176,6 @@
 					</div>
 				</div>
 			</form>
-		</div>
-		<div class="connection-settings" id="mongodb">
-			<h1>mongodb</h1>
-		</div>
-		<div class="connection-settings" id="hbase">
-			<h1>hbase</h1>
-		</div>
-		<div class="connection-settings" id="postgresql">
-			<h1>postgresql</h1>
-		</div>
-		<div class="connection-settings" id="oracle">
-			<h1>oracle</h1>
-		</div>
-		<div class="connection-settings" id="mmsql">
-			<h1>mmsql</h1>
 		</div>
 	</div>
 	<!-- 数据库登录成功后，进入主页 -->

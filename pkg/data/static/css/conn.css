@@ -124,7 +124,7 @@ canvas{
 .connection-settings {width: 600px;margin: 0px auto;margin-top: 30px;}
 .connection-settings h1 {text-align: center;text-shadow: 0px 1px 0px #fff;margin-bottom: 10px;color: #999;font-size: 30px;font-weight: bold;font-family:"Times New Roman",Georgia,Serif;display: flex;margin-left: 250px;}
 .connection-settings h1 .logo{background-image: url(../img/logo.jpg);height: 50px;width: 50px;border-radius: 50%;background-size: cover;background-repeat: no-repeat;}
-.connection-settings h1 .name{margin-left: 10px;margin-top: 10px;}
+.connection-settings h1 #name{margin-left: 10px;margin-top: 10px;}
 .connection-settings .connection-save{margin-top: 10px;height: 30px;margin-bottom: 10px;}
 .connection-settings .connection-save .connection-save-name{display: flex;}
 .connection-settings .connection-save .connection-save-name .connection-save-title-name{padding-top: 4px;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);  border-style:solid;border-width:1px;}
@@ -138,7 +138,7 @@ canvas{
 .connection-scheme-group {display: none;}
 .connection-ssh-group {display: none;z-index: 2;}
 #close_connection_window {display: none;}
-#mysql{display: none;}
+#databases{display: none;}
 #hbase{display: none;}
 #mongodb{display: none;}
 #postgresql{display: none;}
