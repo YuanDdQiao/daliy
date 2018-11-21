@@ -146,6 +146,9 @@ canvas{
 #mmsql{display: none;}
 #connection_error {display: none;}
 #connection-default.active{-webkit-animation: connection-small 0.8s ; animation: connection-small 0.8s ;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
+.bookmarks {
+  display: none;
+}
 
 /* 数据库登录后进入主页 */
 #main{display: none;position: fixed;top: 46px;}

@@ -1,8 +1,9 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
 	"daliy/pkg/postgres/command"
+
+	"github.com/gin-gonic/gin"
 )
 
 func SetupMiddlewares(group *gin.RouterGroup) {

@@ -19,7 +19,7 @@
 		<!-- 鼠标放到这里时显示 选择数据库 -->
 		<div class="connection-switchdb">
 			<div class="switch-control">GetDataBase</div>
-			<div class="connection-select">
+			<div class="connection-select" style="">
 				<div class="connection-mysql" name="mysql">MySQL</div>
 				<div class="connection-mongodb" name="mongodb">MongoDB</div>
 				<div class="connection-hbase" name="hbase">HBase</div>
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="connection-switchos">
-				<div class="switch-control">GetOperatingSys</div>
+				<div class="switch-control"  style="">GetOperatingSys</div>
 				<div class="connection-select">
 					<div class="connection-linux">Linux</div>
 					<div class="connection-windows">Windows</div>
@@ -49,7 +49,7 @@
 		<div class="connection-settings" id="databases">
 			<h1 id="dbconnecttitle">
 				<div class="logo"></div>
-				<div id="name">aaa</div>
+				<div id="name">--访问错误--</div>
 			</h1>
 			<div class="connection-options" id="title-options" style="display: flex;">
 					<!-- 鼠标点击这里时显示 选择保存过的数据库 URL -->
@@ -99,13 +99,20 @@
 				</div>
 				
 				<div class="connection-standard-group">
+          <div class="form-group bookmarks">
+            <label class="col-sm-3 control-label">Bookmark</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="connection_bookmarks"></select>
+            </div>
+          </div>
+
 					<div class="form-group">
 						<label class="col-sm-3 control-label">Host</label>
 						<div class="col-sm-7">
 							<input type="text" id="db_host" class="form-control" />
 						</div>
 						<div class="col-sm-2 no-left-padding">
-							<input type="text" id="db_port" class="form-control" placeholder="3306" />
+							<input type="text" id="db_port" class="form-control" placeholder="" />
 						</div>
 					</div>
 			
@@ -129,7 +136,16 @@
 							<input type="text" id="db_name" class="form-control" />
 						</div>
 					</div>
-		
+          <div class="form-group db_connection_ssl">
+            <label class="col-sm-3 control-label">SSL Mode</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="connection_ssl">
+                <option value="disable">disable</option>
+                <option value="require" selected="selected">require</option>
+                <option value="verify-full">verify-full</option>
+              </select>
+            </div>
+          </div>
 				</div>
 			
 				<div class="connection-ssh-group">
@@ -336,7 +352,10 @@
 <!-- scripts -->
 <script src="js/particles.min.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/ace.js"></script>
+<script type="text/javascript" src="js/ace-pgsql.js"></script>
 <script type="text/javascript" src="js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/bootstrap3-typeahead.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/check.js"></script>

@@ -5,8 +5,11 @@ connect.js
 // switch db name get
 var swdbname             = null;
 var nav_title_db         = null
+// 获取对应数据库端口
+var listdbport = new Map([['mysql', "3306"], ['mongodb', "27017"], ['hbase', "2181"], ['postgresql', "5432"], ['oracle', "1521"], ['mmsql', "1433"]]);
 // 用户数据检查成功进入，否则alert("登录失败")
 function getName(dbnamefrom) {
+  var getLiname=document.getElementById("name")
   if (swdbname!=null) {
     // alert("你点多了！")
     return
@@ -23,9 +26,10 @@ function getName(dbnamefrom) {
       document.querySelector("#connection-window").style.display = "block"
       document.querySelector("#databases").style.display = "block"
   },1000)
-  document.getElementById("name").innerHTML = dbnamefrom
-// alert("您将访问MySQL！")
+  $("#db_port").attr("placeholder",listdbport.get(dbnamefrom));
+  getLiname.innerHTML = dbnamefrom
   swdbname=dbnamefrom
+
 }
 document.querySelector(".connection-mysql").onclick = function(){
   getName($(this).attr("name"))
@@ -842,7 +846,7 @@ function showConnectionSettings() {
     }
   });
 
-  $("#connection_window").show();
+  $("#connection-window").show();
 }
 
 function getConnectionString() {
@@ -1215,7 +1219,7 @@ $(document).ready(function() {
   });
 
   $("#close_connection_window").on("click", function() {
-    $("#connection_window").hide();
+    $("#connection-window").hide();
   });
 
   $("#connection_url").on("change", function() {
@@ -1326,7 +1330,7 @@ $(document).ready(function() {
     var params = {
       url: getConnectionString()
     };
-    console.log("url:  "+params.url+"url.length="+params.url.length)
+
     if (params.url.length == 0) {
       return;
     }
@@ -1348,7 +1352,6 @@ $(document).ready(function() {
 
       if (resp.error) {
         connected = false;
-        console.log("error: "+resp.error)
         $("#connection_error").text(resp.error).show();
       }
       else {
@@ -1360,7 +1363,6 @@ $(document).ready(function() {
         $("#main").show();
       }
     });
-    swdbname=null;
   });
 
   initEditor();
@@ -1393,6 +1395,5 @@ $(document).ready(function() {
       }
     }
   });
-  showConnectionSettings();
   
 });
