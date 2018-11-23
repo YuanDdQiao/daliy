@@ -19,11 +19,11 @@ function removeClass(ele, cls) {
         ele.className = newClass.replace(/^\s+|\s+$/g, '');
     }
 }
-function  goLogin() {
-    window.self.location = "static/index.html";
-    alert("注册成功")
-}
-function  goHome() {
-    window.self.location = "static/connect.html";
-    alert("登录成功")
-}
+// function  goLogin() {
+//     window.self.location = "static/index.html";
+//     alert("注册成功")
+// }
+// function  goHome() {
+//     window.self.location = "static/connect.html";
+//     alert("登录成功")
+// }
