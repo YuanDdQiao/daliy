@@ -1014,8 +1014,19 @@ $(document).ready(function() {
   $(".login-center-input-code-get").on("click", function() {
     console.log("登录获取验证码。。。。")
   })
-  $(".login-top .regist-top").on("click",function(){
-    console.log("注册被点击。。。。")
+//   $(".login-top .regist-top").on("click",function(){
+//     $(".login-top span").css("color","dodgerblue")
+//     $(".regist-top").css("color","black")
+//     // $(".lpassword").style.visibility="visible";
+//     // $(".rpassword").style.visibility="visible";
+//     document.querySelector(".lpassword").style.visibility="visible";
+//     document.querySelector(".rpassword").style.visibility="visible";
+//   })
+  $(".login-top span").on("click",function(){
+    // $(".login-top span").css("color","black")
+    // $(".regist-top").css("color","dodgerblue")
+    // document.querySelector(".lpassword").style.visibility="hidden";
+    // document.querySelector(".rpassword").style.visibility="hidden";
   })
   $(".login-top .enter-home").on("click",function(){
     console.log("直接访问主页被点击。。。。")
@@ -1275,22 +1286,22 @@ $(document).ready(function() {
         $(".connection-scheme-group").show();
         $(".connection-standard-group").hide();
         $(".connection-ssh-group").hide();
-        $("#connection-window").css("height","600px")
+        $("#connection-window").css("height","550px")
         $("#connection-window").css("top","50%")
         return;
       case "standard":
         $(".connection-scheme-group").hide();
         $(".connection-standard-group").show();
         $(".connection-ssh-group").hide();
-        $("#connection-window").css("height","600px")
+        $("#connection-window").css("height","650px")
         $("#connection-window").css("top","50%")
         return;
       case "ssh":
         $(".connection-scheme-group").hide();
         $(".connection-standard-group").show();
         $(".connection-ssh-group").show();
-        $("#connection-window").css("height","780px")
-        $("#connection-window").css("top","40%")
+        $("#connection-window").css("height","850px")
+        $("#connection-window").css("top","35%")
         return;
     }
   });
@@ -1391,8 +1402,8 @@ $(document).ready(function() {
   apiCall("get", "/connection", {}, function(resp) {
     if (resp.error) {
       connected = false;
-      showConnectionSettings();
-      $(".connection-actions").show();
+      // showConnectionSettings();
+      // $(".connection-actions").show();
     }
     else {
       connected = true;

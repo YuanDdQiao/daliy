@@ -105,12 +105,13 @@ canvas{
 		transform: scale(0.2);-moz-transform: scale(0.1);	/* Firefox 4 */-webkit-transform: scale(0.2);	/* Safari 和 Chrome */-o-transform: scale(0.1);	/* Opera */-ms-transform:scale(0.1); 	/* IE 9 */
 	}
 }
-.regist-top{text-align:center;margin-top:10px;margin-left:5px;color:dodgerblue;}
+.regist-top{text-align:center;margin-left:5px;color:dodgerblue;}
 .login{flex-shrink: 0;z-index: 2;position:absolute;width: 350px;border-radius: 20px;height: 550px;background: white;box-shadow: 0px 0px 5px #333333;top: 50%;left: 50%;margin-top: -250px;margin-left: -175px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
 .login-top{margin-top: 100px;padding-left: 40px;box-sizing: border-box;color: #333333;margin-bottom: 50px;display: flex;}
 .login-top span{font-size: 24px;}
-.regist-top {font-size: 15px;}
-.regist-top:hover{cursor: pointer;}
+.regist-top {font-size: 24px;}
+/* .login-top span:hover{cursor: pointer;background:#4bcece;}
+.regist-top:hover{cursor: pointer;background:#4bcece;} */
 .enter-home{font-size: 15px;margin-top:10px;margin-left:5px;color:dodgerblue;}
 .enter-home:hover{cursor: pointer;}
 .login-center{width: 100%;box-sizing: border-box;padding: 0 40px;margin-bottom: 30px;}
@@ -135,7 +136,7 @@ canvas{
 .login-center-input-code{flex-shrink: 0;background: white;padding: 0 5px;position: absolute;z-index: 0;opacity: 0;height: 20px;top: 50%;margin-top: -10px;font-size: 14px;left: 5px;color: dodgerblue;line-height: 20px;transition: all 0.5s;-moz-transition: all 0.5s;	/* Firefox 4 */-webkit-transition: all 0.5s;	/* Safari 和 Chrome */-o-transition: all 0.5s;	/* Opera */}
 .login-center-input input:focus~.login-center-input-code{top: 0;z-index: 3;opacity: 1;margin-top: -15px;}
 .login-code{display: flex;width: 100%;box-sizing: border-box;padding: 0 40px;margin-bottom: 30px;}
-.login-center-input-code-get{text-align:right;width: 30%;padding-top: 10px;cursor: pointer;}
+.login-center-input-code-get{text-align:right;width: 35%;padding-top: 10px;cursor: pointer;width: 100px;}
 
 .login.active{-webkit-animation: login-small 0.8s ; animation: login-small 0.8s ;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
 .login-button{opacity: 0.9;cursor: pointer;width: 250px;text-align: center;height: 40px;line-height: 40px;background-color: dodgerblue;border-radius: 20px;margin: 0 auto;margin-top: 50px;color: white;}
@@ -152,8 +153,8 @@ canvas{
 #connection_barshow{z-index: 1000000;}
 #connection-default{opacity: 0.8;background-size: cover;background-image: url(../img/p723734.jpg);flex-shrink: 0;z-index: 2;position:absolute;width: 600px;border-radius: 5px;height: 500px;box-shadow: 0px 0px 5px #333333;top: 50%;left: 50%;margin-top: -250px;margin-left: -300px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
 
-#connection-window{display: none;flex-shrink: 0;z-index: 2;position:absolute;width: 600px;border-radius: 5px;height: 550px;background: white;box-shadow: 0px 0px 5px #333333;top: 50%;left: 50%;margin-top: -250px;margin-left: -300px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
-#barshow-select{position: fixed;width:100%;background-color: white;font-weight: bold;display: flex;z-index: 1000000;}
+#connection-window{display: none;flex-shrink: 0;z-index: 2;position:absolute;width: 600px;border-radius: 5px;height: 650px;background: white;box-shadow: 0px 0px 5px #333333;top: 50%;left: 50%;margin-top: -250px;margin-left: -300px;transition: all 1s;-moz-transition: all 1s;	/* Firefox 4 */-webkit-transition: all 1s;	/* Safari 和 Chrome */-o-transition: all 1s;	/* Opera */}
+#barshow-select{position: fixed;width:100%;font-weight: bold;display: flex;z-index: 1000000;flex-shrink: 0;}
 /* database */
 .connection-switchdb{font-weight: bold;font-size: 1.5em;padding-top: 3px;padding-left: 10px;padding-bottom: 10px;height: 47.2px;position: relative;display: inline-block;}
 .switch-control{text-align: center;width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.01);  cursor: pointer;border-radius: 5px;border-color: rgba(153, 153, 153, 0.658);  border-style:solid;border-width:1.5px;z-index: 1000000;}
