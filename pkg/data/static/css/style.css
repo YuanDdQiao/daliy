@@ -57,7 +57,7 @@ canvas{
 	height: 100%;
 	position: relative;
   /* background-image: url(../img/bg.jpg); */
-  background-color: #4bcece;
+  background-color: #c1cfcf;
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -201,8 +201,8 @@ canvas{
 #main{display: none;position: fixed;top: 46px;}
 #sidebar{display: none;}
 #body{display: none;}
-#tables_context_menu{display: none;}
-#view_context_menu{display: none;}
+#tables_context_menu{display: none;z-index: 10000;}
+#view_context_menu{display: none;z-index: 10000;}
 #current_database_context_menu{display: none;}
 #results_header_menu{display: none;}
 
@@ -423,7 +423,7 @@ canvas{
 }
 #sidebar input.typeahead {
   display: none;
-  background: #79589f;
+  background: #bff8f8;
   width: 200px;
   height: 22px;
   color: black;

@@ -120,7 +120,7 @@ func Connect(c *gin.Context) {
 		c.JSON(400, Error{"Session is locked"})
 		return
 	}
-
+	fmt.Println("..............zhe.........")
 	var sshInfo *shared.SSHInfo
 	url := c.Request.FormValue("url")
 

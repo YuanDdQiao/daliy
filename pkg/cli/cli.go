@@ -125,7 +125,7 @@ For proper read-only access please follow postgresql role management documentati
 }
 
 func printVersion() {
-	str := fmt.Sprintf("Pgweb v%s", command.VERSION)
+	str := fmt.Sprintf("Daliy v%s", command.VERSION)
 	if command.GitCommit != "" {
 		str += fmt.Sprintf(" (git: %s)", command.GitCommit)
 	}
@@ -165,7 +165,7 @@ func handleSignals() {
 
 func openPage() {
 	url := fmt.Sprintf("http://%v:%v/%s", options.HttpHost, options.HttpPort, options.Prefix)
-	fmt.Println("To view database open", url, "in browser")
+	fmt.Println("To view daliy open", url, "in browser")
 
 	if options.SkipOpen {
 		return
@@ -195,7 +195,6 @@ func Run() {
 	if options.Debug {
 		util.StartProfiler()
 	}
-
 	// Start session cleanup worker
 	if options.Sessions && !command.Opts.DisableConnectionIdleTimeout {
 		go api.StartSessionCleanup()

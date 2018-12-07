@@ -771,7 +771,7 @@ function initEditor() {
   editor = ace.edit("custom_query");
 
   editor.setFontSize(13);
-  editor.setTheme("ace/theme/tomorrow");
+  editor.setTheme("ace/theme/kr_theme");
   editor.setShowPrintMargin(false);
   editor.getSession().setMode("ace/mode/pgsql");
   editor.getSession().setTabSize(2);
@@ -803,11 +803,11 @@ function initEditor() {
     }
 
     writeQueryTimeout = setTimeout(function() {
-      localStorage.setItem("pgweb_query", editor.getValue());
+      localStorage.setItem("dbweb_query", editor.getValue());
     }, 1000);
   });
 
-  var query = localStorage.getItem("pgweb_query");
+  var query = localStorage.getItem("dbweb_query");
   if (query && query.length > 0) {
     editor.setValue(query);
     editor.clearSelection();
@@ -867,7 +867,7 @@ function getConnectionString() {
     var port = $("#db_port").val();
     var user = $("#db_user").val();
     var pass = encodeURIComponent($("#db_password").val());
-    var db   = $("#db_db").val();
+    var db   = $("#db_name").val();
 
     if (port.length == 0) {
       port = "5432";
@@ -1324,7 +1324,7 @@ $(document).ready(function() {
     $("#db_port").val(item.port);
     $("#db_user").val(item.user);
     $("#db_password").val(item.password);
-    $("#db_db").val(item.database);
+    $("#db_name").val(item.database);
     $("#connection_ssl").val(item.ssl);
 
     if (item.ssh && Object.keys(item.ssh).length > 0) {
@@ -1370,19 +1370,26 @@ $(document).ready(function() {
     button.prop("disabled", true).text("Please wait...");
 
     apiCall("post", "/connect", params, function(resp) {
+      console.log("connectionto....1 ")
       button.prop("disabled", false).text("Connect");
-
+      
       if (resp.error) {
+        console.log("connectionto....1..false ")
         connected = false;
         $("#connection_error").text(resp.error).show();
       }
       else {
+        console.log("connectionto....1..ok ")
         connected = true;
         loadSchemas();
 
-        $("#connection_window").hide();
+        $("#connection-window").hide();
         $("#current_database").text(resp.current_database);
         $("#main").show();
+        $("#connection-list-items").show();
+        $("#nav").show();
+        $("#sidebar").show();
+        $("#body").show();
       }
     });
   });
@@ -1400,17 +1407,24 @@ $(document).ready(function() {
   }
 
   apiCall("get", "/connection", {}, function(resp) {
+    console.log("connectionto....2 ")
     if (resp.error) {
+      console.log("connectionto....2..false ")
       connected = false;
       // showConnectionSettings();
       // $(".connection-actions").show();
     }
     else {
+      console.log("connectionto....2..ok ")
       connected = true;
       loadSchemas();
 
       $("#current_database").text(resp.current_database);
       $("#main").show();
+      $("#connection-list-items").show();
+      $("#nav").show();
+      $("#sidebar").show();
+      $("#body").show();
 
       if (!resp.session_lock) {
         $(".connection-actions").show();
